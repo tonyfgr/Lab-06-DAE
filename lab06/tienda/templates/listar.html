@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+
+
+{% block content %}
+
+  <h2 class="display-4">Productos de la categoría {{ categoria.nombre }}</h2>
+
+  <ul class="list-group">
+    {% for producto in productos %}
+      <li class="list-group-item">
+        <h3 class="mb-2">{{ producto.nombre }}</h3>
+        <p class="mb-1"><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+        <p class="mb-1"><strong>Precio:</strong> ${{ producto.precio }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  
+  <style>
+    .list-group {
+      margin-top: 20px;
+    }
+    .list-group-item {
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .list-group-item h3 {
+      font-size: 24px;
+      color: #007BFF;
+    }
+    .list-group-item p {
+      font-size: 18px;
+    }
+  </style>
+{% endblock %}
